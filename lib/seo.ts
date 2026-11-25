@@ -86,7 +86,7 @@ export function regionTitle(region: RegionInfo): string {
 export function regionDescription(region: RegionInfo): string {
   const price = formatEuro(region.chevalFiscal);
   const codes = region.departements.map((d) => d.code).join(', ');
-  const base = `Carte grise ${regionPreposition(region)} ${region.name} en ${YEAR} : cheval fiscal à ${price}, réduction de 50 % après 10 ans`;
+  const base = `Carte grise ${regionPreposition(region)} ${region.name} pour ${YEAR} : cheval fiscal à ${price}, réduction de 50 % après 10 ans`;
   const candidates = [
     `${base} et calcul des taxes pour les départements ${codes}.`,
     `${base} et calcul détaillé des taxes Y.1 à Y.6.`,

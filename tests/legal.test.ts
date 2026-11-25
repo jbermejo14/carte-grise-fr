@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { getTitular, ficheroTitular } from '../lib/legal';
 import { legalHolderValue, legalReviewDate, legalMetadata } from '../lib/legal-text';
+import { absoluteUrl } from '../lib/site';
 
 describe('Textes légaux et titulaire', () => {
   it('trouve le fichier titular.example.json par défaut', () => {
@@ -29,5 +30,8 @@ describe('Textes légaux et titulaire', () => {
     const meta = legalMetadata('/mentions-legales', 'Mentions', 'Desc');
     assert.equal(meta.title, 'Mentions');
     assert.deepEqual(meta.robots, { index: false, follow: true });
+    assert.equal(meta.openGraph?.url, absoluteUrl('/mentions-legales'));
+    assert.equal(meta.alternates?.canonical, absoluteUrl('/mentions-legales'));
+    assert.ok(meta.twitter);
   });
 });

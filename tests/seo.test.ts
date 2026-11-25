@@ -13,6 +13,7 @@ import {
   buildPageMetadata,
   formatEuro,
   fullTitle,
+  regionDescription,
   regionTitle,
 } from '../lib/seo';
 import { absoluteUrl } from '../lib/site';
@@ -55,6 +56,14 @@ describe('SEO : titres et descriptions', () => {
 
   it('chaque titre est unique', () => {
     assert.equal(new Set(pages.map((p) => p.title)).size, pages.length);
+  });
+
+  it('aucune description de région ne répète « en » avant « en 2026 »', () => {
+    for (const region of REGIONS) {
+      const description = regionDescription(region);
+      assert.doesNotMatch(description, /\ben\b.* en \d{4}/, region.slug);
+      assert.match(description, /pour \d{4}/, region.slug);
+    }
   });
 
   it('chaque description fait entre 120 et 160 caractères et est unique', () => {
