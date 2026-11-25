@@ -1,6 +1,6 @@
 # Carte Grise France 2026 — Ododex (`/fr/carte-grise`)
 
-Simulateur officiel du coût de certificat d'immatriculation (carte grise) en France selon les tarifs régionaux du cheval fiscal en vigueur en 2026.
+Simulateur du coût de certificat d'immatriculation (carte grise) en France selon les tarifs régionaux du cheval fiscal en vigueur en 2026.
 
 - **URL en production** : [https://ododex.com/fr/carte-grise](https://ododex.com/fr/carte-grise)
 - **Worker Cloudflare** : `ododex-carte-grise`
