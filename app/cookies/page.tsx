@@ -2,15 +2,15 @@ import React from 'react';
 import { LegalPage } from '@/components/LegalPage';
 import { getAdSenseClient } from '@/components/AdSenseScript';
 import { legalMetadata } from '@/lib/legal-text';
-import { SITE_NAME } from '@/lib/site';
+import { LEGAL_PAGES_SEO } from '@/lib/seo';
 
-const PATH = '/cookies';
+const PATH = LEGAL_PAGES_SEO.cookies.path;
 const URL_COOKIES_GOOGLE = 'https://policies.google.com/technologies/cookies?hl=fr';
 
 export const metadata = legalMetadata(
   PATH,
-  'Politique relative aux cookies',
-  `Gestion des traceurs, cookies et stockage local sur ${SITE_NAME}.`
+  LEGAL_PAGES_SEO.cookies.title,
+  LEGAL_PAGES_SEO.cookies.description
 );
 
 export default function CookiesPage() {

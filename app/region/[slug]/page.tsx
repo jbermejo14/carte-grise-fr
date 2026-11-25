@@ -6,6 +6,7 @@ import { REGIONS, findRegionBySlug, TAXE_GESTION_FIXE, REDEVANCE_ACHEMINEMENT } 
 import { CarteGriseCalculator } from '@/components/CarteGriseCalculator';
 import { AdSlot } from '@/components/AdSlot';
 import { absoluteUrl } from '@/lib/site';
+import { buildPageMetadata, formatEuro, regionDescription, regionTitle } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -24,21 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const region = findRegionBySlug(slug);
   if (!region) return {};
 
-  const title = `Carte Grise ${region.name} 2026 : Prix du Cheval Fiscal (${region.chevalFiscal.toFixed(2)} €) | Ododex`;
-  const description = `Calculez le prix officiel de votre carte grise en région ${region.name}. Tarif officiel du cheval fiscal (${region.chevalFiscal.toFixed(2)} €), simulateur pour les départements ${region.departements.map((d) => d.code).join(', ')} et réduction de 50% après 10 ans.`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: absoluteUrl(`/region/${region.slug}`),
-    },
-    openGraph: {
-      title,
-      description,
-      url: absoluteUrl(`/region/${region.slug}`),
-    },
-  };
+  return buildPageMetadata(regionTitle(region), regionDescription(region), `/region/${region.slug}`);
 }
 
 export default async function RegionPage({ params }: Props) {
@@ -51,8 +38,8 @@ export default async function RegionPage({ params }: Props) {
     const over10Y1 = under10Y1 * 0.5;
     return {
       cv,
-      under10Total: (Math.round(under10Y1 + TAXE_GESTION_FIXE) + REDEVANCE_ACHEMINEMENT).toFixed(2),
-      over10Total: (Math.round(over10Y1 + TAXE_GESTION_FIXE) + REDEVANCE_ACHEMINEMENT).toFixed(2),
+      under10Total: (Math.round(under10Y1 + TAXE_GESTION_FIXE) + REDEVANCE_ACHEMINEMENT),
+      over10Total: (Math.round(over10Y1 + TAXE_GESTION_FIXE) + REDEVANCE_ACHEMINEMENT),
     };
   });
 
@@ -71,7 +58,7 @@ export default async function RegionPage({ params }: Props) {
       <section className="space-y-3">
         <div className="flex flex-wrap items-center gap-2">
           <span className="tag tag-accent font-bold text-xs">
-            {region.chevalFiscal.toFixed(2)} € / CV
+            {formatEuro(region.chevalFiscal)} / CV
           </span>
           <span className="tag text-xs">
             {region.departements.length} départements
@@ -84,7 +71,7 @@ export default async function RegionPage({ params }: Props) {
 
         <p className="text-sm text-secondary leading-relaxed">
           Le Conseil régional de {region.name} a fixé le montant du cheval fiscal unitaire à{' '}
-          <strong className="text-fg">{region.chevalFiscal.toFixed(2)} €</strong>.
+          <strong className="text-fg">{formatEuro(region.chevalFiscal)}</strong>.
           Ce tarif s'applique pour toutes les démarches d'immatriculation des résidents des départements :{' '}
           {region.departements.map((d) => `${d.name} (${d.code})`).join(', ')}.
         </p>
@@ -135,13 +122,13 @@ export default async function RegionPage({ params }: Props) {
                 <tr key={item.cv} className="hover:bg-elevated transition-colors">
                   <td className="py-2.5 px-3 font-bold text-fg">{item.cv} CV</td>
                   <td className="py-2.5 px-3 text-right font-mono text-secondary">
-                    {(item.cv * region.chevalFiscal).toFixed(2)} €
+                    {formatEuro(item.cv * region.chevalFiscal)}
                   </td>
                   <td className="py-2.5 px-3 text-right font-mono font-bold text-fg">
-                    {item.under10Total} €
+                    {formatEuro(item.under10Total)}
                   </td>
                   <td className="py-2.5 px-3 text-right font-mono font-bold text-positive">
-                    {item.over10Total} €
+                    {formatEuro(item.over10Total)}
                   </td>
                 </tr>
               ))}
@@ -163,7 +150,7 @@ export default async function RegionPage({ params }: Props) {
               className="p-2.5 rounded-lg border border-line bg-surface hover:border-accent text-xs font-medium text-secondary hover:text-fg transition-all text-center"
             >
               <span className="block truncate">{r.name}</span>
-              <span className="text-[11px] text-muted">{r.chevalFiscal.toFixed(2)} €/CV</span>
+              <span className="text-[11px] text-muted">{formatEuro(r.chevalFiscal)}/CV</span>
             </Link>
           ))}
         </div>

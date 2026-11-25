@@ -2,17 +2,18 @@ import React from 'react';
 import { LegalPage } from '@/components/LegalPage';
 import { getTitular, type Titular } from '@/lib/legal';
 import { legalHolderValue, legalMetadata } from '@/lib/legal-text';
+import { LEGAL_PAGES_SEO } from '@/lib/seo';
 import { SITE_NAME } from '@/lib/site';
 
-const PATH = '/mentions-legales';
+const PATH = LEGAL_PAGES_SEO.mentionsLegales.path;
 const URL_CLOUDFLARE = 'https://www.cloudflare.com';
 const URL_SERVICE_PUBLIC = 'https://www.service-public.fr/particuliers/vosdroits/N367';
 const URL_ANTS = 'https://immatriculation.ants.gouv.fr';
 
 export const metadata = legalMetadata(
   PATH,
-  'Mentions légales',
-  `Mentions légales de ${SITE_NAME} : éditeur, hébergeur, sources des barèmes fiscaux et limites de responsabilité.`
+  LEGAL_PAGES_SEO.mentionsLegales.title,
+  LEGAL_PAGES_SEO.mentionsLegales.description
 );
 
 export default function MentionsLegalesPage() {
@@ -43,7 +44,7 @@ export default function MentionsLegalesPage() {
 
       <h2 className="text-base font-bold text-fg">Objet du site et indépendance</h2>
       <p>
-        {SITE_NAME} est un simulateur gratuit de calcul du coût officiel de la taxe sur les certificats d&apos;immatriculation (carte grise) en France métropolitaine et outre-mer.
+        {SITE_NAME} est un simulateur gratuit de calcul du coût de la taxe sur les certificats d&apos;immatriculation (carte grise) en France métropolitaine et outre-mer.
       </p>
       <p>
         {SITE_NAME} est un site d&apos;information strictement <strong>indépendant</strong>. Il n&apos;est pas affilié, ni mandaté, ni associé à l&apos;Agence Nationale des Titres Sécurisés (ANTS / France Titres), ni au Ministère de l&apos;Intérieur, ni à aucune préfecture ou collectivité régionale. Les démarches d&apos;immatriculation officielles se réalisent sans intermédiaire sur le portail de l&apos;État :{' '}

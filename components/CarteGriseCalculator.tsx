@@ -293,12 +293,12 @@ export function CarteGriseCalculator({
         </div>
       </div>
 
-      {/* Colonne de résultat : Devis fiscal officiel */}
+      {/* Colonne de résultat : Estimation fiscale */}
       <div className="lg:col-span-5 space-y-6">
         <div className="card border-accent/40 bg-surface-elevated space-y-6 sticky top-20">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-secondary">
-              Coût officiel certificat d'immatriculation
+              Coût estimé du certificat d'immatriculation
             </span>
             <div className="mt-2 flex items-baseline gap-2">
               <span className="text-4xl font-extrabold text-accent">
@@ -306,7 +306,7 @@ export function CarteGriseCalculator({
               </span>
             </div>
             <p className="mt-1 text-xs text-muted">
-              Total officiel à régler auprès de l'État (Taxes Y.1 à Y.6).
+              Total estimé à régler auprès de l'État (Taxes Y.1 à Y.6).
             </p>
           </div>
 
@@ -392,7 +392,7 @@ export function CarteGriseCalculator({
               <ExternalLink className="w-4 h-4" />
             </a>
             <p className="mt-2 text-center text-[11px] text-muted">
-              Service public officiel gratuit sans surcoût d'intermédiaire privé.
+              Le site officiel de l'État est gratuit et sans intermédiaire privé.
             </p>
           </div>
         </div>

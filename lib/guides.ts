@@ -18,9 +18,9 @@ export interface GuideItem {
 export const GUIDES: GuideItem[] = [
   {
     slug: 'prix-cheval-fiscal-par-region',
-    title: 'Prix du cheval fiscal par région 2026 : Barème officiel',
-    metaTitle: 'Prix Cheval Fiscal 2026 par Région : Barème Officiel des Tarifs | Ododex',
-    metaDescription: 'Consultez les tarifs officiels 2026 du cheval fiscal votés par chaque région en France. Découvrez les hausses récentes, le classement des régions et comment calculer votre taxe régionale.',
+    title: 'Prix du cheval fiscal par région 2026 : barème complet',
+    metaTitle: 'Prix du cheval fiscal 2026 : barème par région',
+    metaDescription: 'Barème 2026 du cheval fiscal voté par chaque région : classement du moins cher au plus cher, hausses récentes et méthode pour calculer votre taxe régionale.',
     summary: 'Le montant de la taxe régionale de votre certificat d\'immatriculation dépend directement du tarif unitaire du cheval fiscal voté par le Conseil régional de votre lieu de résidence.',
     publishedDate: '2026-01-01',
     sections: [
@@ -38,7 +38,7 @@ export const GUIDES: GuideItem[] = [
           'En 2026, de fortes disparités existent sur le territoire français. Alors que la Normandie culmine à 60,00 € par cheval fiscal, la Corse conserve le barème le plus accessible de France métropolitaine à 27,00 €.',
           'Voici un aperçu des principaux barèmes régionaux applicables en 2026 :',
           '• Normandie : 60,00 € / CV\n• Bretagne, Bourgogne-Franche-Comté, Centre-Val de Loire : 55,00 € / CV\n• Île-de-France : 54,95 € / CV\n• Provence-Alpes-Côte d\'Azur (PACA) : 51,20 € / CV\n• Occitanie : 47,00 € / CV\n• Auvergne-Rhône-Alpes : 43,00 € / CV\n• Hauts-de-France : 39,20 € / CV\n• Corse : 27,00 € / CV\n• DROM (Guadeloupe, Guyane, Martinique, La Réunion, Mayotte) : entre 30,00 € et 51,00 € / CV.',
-          'Utilisez le simulateur officiel sur notre page d\'accueil pour sélectionner votre département et obtenir le calcul exact centime par centime.'
+          'Utilisez le simulateur sur notre page d\'accueil pour sélectionner votre département et obtenir le calcul exact centime par centime.'
         ]
       },
       {
@@ -63,8 +63,8 @@ export const GUIDES: GuideItem[] = [
   {
     slug: 'regle-moins-10-ans',
     title: 'Véhicules de plus de 10 ans : Réduction automatique de 50 %',
-    metaTitle: 'Carte Grise Véhicule +10 Ans : Réduction de 50% sur la Taxe Régionale | Ododex',
-    metaDescription: 'Comprendre l\'abattement de 50 % sur la taxe régionale Y.1 pour les voitures, utilitaires et deux-roues de plus de 10 ans d\'âge. Calculs, exemples et conditions d\'éligibilité.',
+    metaTitle: 'Carte grise +10 ans : réduction de 50 % sur la taxe',
+    metaDescription: 'Comprendre l\'abattement de 50 % sur la taxe régionale Y.1 pour les véhicules de plus de 10 ans : calculs, exemples et conditions d\'éligibilité.',
     summary: 'Si votre voiture ou votre moto a plus de 10 ans d\'âge, vous bénéficiez automatiquement d\'un abattement fiscal de 50 % sur le tarif de la taxe régionale.',
     publishedDate: '2026-01-01',
     sections: [
@@ -105,8 +105,8 @@ export const GUIDES: GuideItem[] = [
   {
     slug: 'carte-grise-voiture-electrique',
     title: 'Carte grise pour voiture 100 % électrique : Coût fixe de 13,76 €',
-    metaTitle: 'Carte Grise Voiture Électrique 2026 : Prix Fixe de 13,76 € et Exonération | Ododex',
-    metaDescription: 'Guide complet du prix de la carte grise d\'un véhicule électrique en France. Exonération totale de taxe régionale Y.1 et fin des avantages pour les hybrides en 2026.',
+    metaTitle: 'Carte grise voiture électrique : 13,76 € en 2026',
+    metaDescription: 'Prix de la carte grise d\'un véhicule électrique en France : exonération totale de la taxe régionale Y.1, coût fixe de 13,76 € et situation des hybrides en 2026.',
     summary: 'Les véhicules électriques bénéficient d\'une exonération totale et permanente de taxe régionale en France. Le coût d\'immatriculation est limité à 13,76 €.',
     publishedDate: '2026-01-01',
     sections: [
@@ -147,8 +147,8 @@ export const GUIDES: GuideItem[] = [
   {
     slug: 'documents-immatriculation-ants',
     title: 'Documents et démarches pour immatriculer son véhicule sur l\'ANTS',
-    metaTitle: 'Documents Carte Grise ANTS 2026 : Liste des Pièces Justificatives | Ododex',
-    metaDescription: 'La liste officielle et exhaustive des documents indispensables pour faire votre changement de titulaire en ligne sur le portail ANTS / France Titres sans rejet de dossier.',
+    metaTitle: 'Documents carte grise ANTS 2026 : pièces à fournir',
+    metaDescription: 'Liste complète des documents à fournir pour un changement de titulaire en ligne sur le portail ANTS / France Titres, afin d\'éviter tout rejet de dossier.',
     summary: 'Préparez votre dossier d\'immatriculation sur le site officiel de l\'État avec la liste exacte des pièces justificatives au format numérique.',
     publishedDate: '2026-01-01',
     sections: [

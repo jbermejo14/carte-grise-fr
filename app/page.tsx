@@ -7,8 +7,8 @@ import { REGIONS } from '@/lib/carte-grise';
 
 const FAQ_ITEMS = [
   {
-    q: "Comment est calculé le prix officiel d'une carte grise en France ?",
-    a: "Le prix total d'une carte grise (taxe Y.6) est composé de 5 taxes officielles : la taxe régionale Y.1 (puissance fiscale × tarif du cheval fiscal de votre région, avec réduction de 50 % si le véhicule a plus de 10 ans), la taxe professionnelle Y.2 (pour les utilitaires), le malus écologique Y.3 (sur les véhicules neufs), la taxe fixe de gestion Y.4 (11 €) et la redevance d'acheminement postal Y.5 (2,76 €).",
+    q: "Comment est calculé le prix d'une carte grise en France ?",
+    a: "Le prix total d'une carte grise (taxe Y.6) est composé de 5 taxes : la taxe régionale Y.1 (puissance fiscale × tarif du cheval fiscal de votre région, avec réduction de 50 % si le véhicule a plus de 10 ans), la taxe professionnelle Y.2 (pour les utilitaires), le malus écologique Y.3 (sur les véhicules neufs), la taxe fixe de gestion Y.4 (11 €) et la redevance d'acheminement postal Y.5 (2,76 €).",
   },
   {
     q: "Quel est le prix du cheval fiscal dans ma région ?",
@@ -23,7 +23,7 @@ const FAQ_ITEMS = [
     a: "Les véhicules 100 % électriques ou à hydrogène sont totalement exonérés de la taxe régionale (Y.1 = 0 €) dans toutes les régions de France métropolitaine et d'outre-mer. Vous ne payez que la taxe fixe de gestion (11 €) et les frais d'envoi postal (2,76 €), soit un coût total de seulement 13,76 €.",
   },
   {
-    q: "Où faire la demande officielle de certificat d'immatriculation ?",
+    q: "Où faire la demande de certificat d'immatriculation ?",
     a: "Depuis la fermeture des guichets en préfecture (Plan Préfectures Nouvelle Génération), toutes les démarches d'immatriculation se font obligatoirement en ligne sur le site officiel de l'État : immatriculation.ants.gouv.fr (Agence Nationale des Titres Sécurisés / France Titres), sans frais de dossier supplémentaires.",
   },
 ];
@@ -56,7 +56,7 @@ export default function HomePage() {
         </h1>
         <p className="text-sm sm:text-base text-secondary leading-relaxed">
           Simulez en direct le coût exact de votre certificat d'immatriculation selon votre région,
-          la puissance fiscale de votre véhicule et son âge. Calcul officiel transparent conforme à la Loi de finances.
+          la puissance fiscale de votre véhicule et son âge. Calcul transparent conforme à la Loi de finances.
         </p>
       </section>
 

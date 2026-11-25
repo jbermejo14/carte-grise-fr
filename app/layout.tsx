@@ -4,19 +4,19 @@ import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { AdSenseScript } from '@/components/AdSenseScript';
-import { absoluteUrl } from '@/lib/site';
+import { absoluteUrl, getSiteUrl, SITE_NAME } from '@/lib/site';
+import { HOME_DESCRIPTION, HOME_TITLE, TITLE_SUFFIX, buildSocialMetadata, fullTitle } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ododex.com'),
+  metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "Calculateur Carte Grise 2026 : Prix et Simulation Officielle | Ododex",
-    template: "%s | Ododex",
+    default: fullTitle(HOME_TITLE),
+    template: `%s${TITLE_SUFFIX}`,
   },
-  description:
-    "Calculez gratuitement le prix officiel de votre carte grise (certificat d'immatriculation) en 2026. Barème du cheval fiscal par région, réduction de 50% pour les véhicules de plus de 10 ans et exonérations écologiques.",
-  authors: [{ name: 'Ododex' }],
-  creator: 'Ododex',
-  publisher: 'Ododex',
+  description: HOME_DESCRIPTION,
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   robots: {
     index: true,
     follow: true,
@@ -24,21 +24,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: absoluteUrl('/'),
   },
-  openGraph: {
-    title: "Calculateur de Carte Grise 2026 | Ododex",
-    description:
-      "Simulateur officiel du coût de certificat d'immatriculation selon votre région, chevaux fiscaux et type de véhicule.",
-    url: absoluteUrl('/'),
-    siteName: 'Ododex',
-    locale: 'fr_FR',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: "Calculateur de Carte Grise 2026 | Ododex",
-    description:
-      "Simulateur officiel du coût de certificat d'immatriculation selon votre région, chevaux fiscaux et type de véhicule.",
-  },
+  ...buildSocialMetadata(HOME_TITLE, HOME_DESCRIPTION, '/'),
   icons: {
     icon: '/ododex-favicon.svg',
   },

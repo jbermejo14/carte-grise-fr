@@ -6,6 +6,7 @@ import { GUIDES, findGuideBySlug } from '@/lib/guides';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { AdSlot } from '@/components/AdSlot';
 import { absoluteUrl } from '@/lib/site';
+import { buildPageMetadata } from '@/lib/seo';
 
 interface Props {
   params: Promise<{ tema: string }>;
@@ -24,18 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = findGuideBySlug(tema);
   if (!guide) return {};
 
-  return {
-    title: guide.metaTitle,
-    description: guide.metaDescription,
-    alternates: {
-      canonical: absoluteUrl(`/guide/${guide.slug}`),
-    },
-    openGraph: {
-      title: guide.metaTitle,
-      description: guide.metaDescription,
-      url: absoluteUrl(`/guide/${guide.slug}`),
-    },
-  };
+  return buildPageMetadata(guide.metaTitle, guide.metaDescription, `/guide/${guide.slug}`);
 }
 
 export default async function GuidePage({ params }: Props) {
@@ -93,7 +83,7 @@ export default async function GuidePage({ params }: Props) {
 
       {/* En-tête de l'article */}
       <header className="space-y-4">
-        <span className="tag tag-accent font-semibold text-xs">Guide officiel</span>
+        <span className="tag tag-accent font-semibold text-xs">Guide pratique</span>
         <h1 className="text-2xl sm:text-3xl font-black text-fg tracking-tight leading-tight">
           {guide.title}
         </h1>
@@ -107,7 +97,7 @@ export default async function GuidePage({ params }: Props) {
         <div>
           <h2 className="font-bold text-sm text-fg">Calculez le prix exact de votre carte grise</h2>
           <p className="text-xs text-secondary mt-0.5">
-            Simulateur officiel 2026 selon votre région et votre véhicule.
+            Simulateur 2026 selon votre région et votre véhicule.
           </p>
         </div>
         <Link
